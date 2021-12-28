@@ -85,5 +85,34 @@ minetest.override_item("nc_lux:stone_7",
 	{description = "Glowing Kimberlite", color = "paleturquoise"}
 )
 
+-----lignite-----
+if not minetest.get_modpath("nc_lignite") then
+return end
+
+minetest.override_item("nc_lignite:stone",
+	{description = "Dusty Phyllite"}
+)
+minetest.override_item("nc_lignite:stone_1",
+	{description = "Dusty Mica", color = "paleturquoise"}
+)
+minetest.override_item("nc_lignite:stone_2",
+	{description = "Dusty Dolomite", color = "lightslategrey"}
+)
+minetest.override_item("nc_lignite:stone_3",
+	{description = "Dusty Schist"}
+)
+minetest.override_item("nc_lignite:stone_4",
+	{description = "Dusty Basalt", color = "lightslategray"}
+)
+minetest.override_item("nc_lignite:stone_5",
+	{description = "Dusty Gabbro", color = "darkslategray"}
+)
+minetest.override_item("nc_lignite:stone_6",
+	{description = "Dusty Granite", color = "lightcoral"}
+)
+
+minetest.override_item("nc_lignite:stone_7",
+	{description = "Dusty Kimberlite", color = "paleturquoise"}
+)
 
 
