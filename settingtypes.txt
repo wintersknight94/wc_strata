@@ -1,0 +1,8 @@
+# If enabled, recolors hardstone strata and renames some stone & concrete types to make the underground appear more diverse.
+wc_strata.stratacolor (Colorful Strata) bool true
+
+# If enabled, glowing radioactive strata may be found DEEP underground.
+wc_strata.glowstrata (Glowing Strata Deep Underground) bool true
+
+# If enabled, soft stone layers may occasionally be found in hard stone layers.
+wc_strata.softstrata (Softer Stone Inclusions) bool true
