@@ -4,7 +4,7 @@ local minetest, nodecore
 -- LUALOCALS > ---------------------------------------------------------
 local modname = minetest.get_current_modname()
 -- ================================================================== --
-local function sedimentary_layer(type, ymin, ymax, seed, thin, thick, threshold)
+local function metamorphic_layer(type, ymin, ymax, seed, thin, thick, threshold)
 	minetest.register_ore({
 		ore_type        = "sheet",
 		ore             = type,
@@ -25,17 +25,13 @@ local function sedimentary_layer(type, ymin, ymax, seed, thin, thick, threshold)
 	})
 end
 
------<> sedimentary rock type <>---------------<> ymin <>---<> ymax <>---<> seed <>---<> thin <>-<> thick <>---<> threshold
-sedimentary_layer("nc_concrete:adobe",			-128,		64,		581478,		2,		3,		0.5)
-sedimentary_layer("nc_concrete:sandstone",		-384,		64,		789134,		3,		5,		0.2)
-sedimentary_layer("nc_concrete:cloudstone",		-512,		86,		239038,		1,		1,		0.8)
-sedimentary_layer("nc_concrete:coalstone",		-896,		32,		191919,		1,		2,		0.9)
-
-if minetest.get_modpath("wc_naturae") then
-   sedimentary_layer("wc_naturae:shellstone",	-128,		16,		287414,		1,		3,		0.9)
+-----<> metamorphic rock type <>----------<> ymin <>---<> ymax <>---<> seed <>---<> thin <>---<> thick <>---<> threshold
+if minetest.settings:get_bool(modname .. ".glowstrata", true) then
+   metamorphic_layer("nc_lux:stone_6",		-896,	-768,		371984,		1,		1,		2.75)
+   metamorphic_layer("nc_lux:stone_7",		-31000,	-896,		371984,		1,		2,		2.25)
 end
 
-if minetest.get_modpath("wc_pottery") then
-   sedimentary_layer("wc_pottery:ceramic",		-128,		32,		649874,		1,		3,		0.8)
+if minetest.settings:get_bool(modname .. ".softstrata", true) then
+   metamorphic_layer("nc_terrain:stone",	-1024,	-128,		841759,		1,		3,		1.25)
 end
 

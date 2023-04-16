@@ -4,7 +4,7 @@ local minetest, nodecore
 -- LUALOCALS > ---------------------------------------------------------
 local modname = minetest.get_current_modname()
 -- ================================================================== --
-local function sedimentary_layer(type, ymin, ymax, seed, thin, thick, threshold)
+local function igneous_layer(type, ymin, ymax, seed, thin, thick, threshold)
 	minetest.register_ore({
 		ore_type        = "sheet",
 		ore             = type,
@@ -25,17 +25,17 @@ local function sedimentary_layer(type, ymin, ymax, seed, thin, thick, threshold)
 	})
 end
 
------<> sedimentary rock type <>---------------<> ymin <>---<> ymax <>---<> seed <>---<> thin <>-<> thick <>---<> threshold
-sedimentary_layer("nc_concrete:adobe",			-128,		64,		581478,		2,		3,		0.5)
-sedimentary_layer("nc_concrete:sandstone",		-384,		64,		789134,		3,		5,		0.2)
-sedimentary_layer("nc_concrete:cloudstone",		-512,		86,		239038,		1,		1,		0.8)
-sedimentary_layer("nc_concrete:coalstone",		-896,		32,		191919,		1,		2,		0.9)
+-----<> igneous rock type <>----------<> ymin <>---<> ymax <>---<> seed <>---<> thin <>---<> thick <>---<> threshold
 
-if minetest.get_modpath("wc_naturae") then
-   sedimentary_layer("wc_naturae:shellstone",	-128,		16,		287414,		1,		3,		0.9)
+igneous_layer("nc_igneous:pumice",			-1024,	128,			478378,		1,		2,		1.0)
+
+if minetest.get_modpath("wc_vulcan") then
+	igneous_layer("wc_vulcan:pumcrete",	-1024,	-128,		720319,		1,		3,		1.2)
+	igneous_layer("wc_vulcan:obsidian",	-10206,	-512,		785125,		1,		4,		1.5)
 end
 
-if minetest.get_modpath("wc_pottery") then
-   sedimentary_layer("wc_pottery:ceramic",		-128,		32,		649874,		1,		3,		0.8)
+if minetest.get_modpath("wc_quicksilver") then
+   igneous_layer("wc_quicksilver:cinnabar",	-1024,	-512,		426761,		1,		2,		1.1)
 end
+
 

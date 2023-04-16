@@ -5,9 +5,11 @@ local include, nodecore
 local modname = minetest.get_current_modname()
 ------------------------------------------------------------------------
 
-include("sedimentary")
---include("igneous")
---include("metamorphic")
+if minetest.settings:get_bool(modname .. ".newstrata", true) then
+	include("sedimentary")
+	include("igneous")
+	include("metamorphic")
+end
 
 ------------------------------------------------------------------------
 
