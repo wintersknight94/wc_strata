@@ -27,7 +27,8 @@ end
 
 -----<> igneous rock type <>----------<> ymin <>---<> ymax <>---<> seed <>---<> thin <>---<> thick <>---<> threshold
 
-igneous_layer("nc_igneous:pumice",			-1024,	128,			478378,		1,		2,		1.0)
+-- pumice sheets currently disabled due to nearly always melting
+--igneous_layer("nc_igneous:pumice",			-1024,	128,			478378,		1,		2,		1.0)
 
 if minetest.get_modpath("wc_vulcan") then
 	igneous_layer("wc_vulcan:pumcrete",	-1024,	-128,		720319,		1,		3,		1.2)
