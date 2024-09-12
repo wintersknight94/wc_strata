@@ -1,23 +1,22 @@
 -- LUALOCALS < ---------------------------------------------------------
-local include, minetest, nodecore
-    = include, minetest, nodecore
+local include, nodecore
+    = include, nodecore
 -- LUALOCALS > ---------------------------------------------------------
 local modname = minetest.get_current_modname()
 ------------------------------------------------------------------------
 
-include("stala")
-
-if minetest.get_modpath("wc_crystals") then
-	include("lodite")
-	include("luxite")
+if minetest.settings:get_bool(modname .. ".newstrata", true) then
+	include("sedimentary")
+	include("igneous")
+	include("metamorphic")
 end
 
-if minetest.get_modpath("wc_crystals") and minetest.settings:get_bool("wc_crystals.real_crystals", true) then
-	include("selenite")
-	include("quartz")
-	include("amethyst")
+------------------------------------------------------------------------
+
+if minetest.settings:get_bool(modname .. ".stratacolor", true) then
+	include("strata")
 end
 
-if minetest.get_modpath("wc_adamant") then
-	include("adamantine")
-end
+------------------------------------------------------------------------
+
+--include("")
